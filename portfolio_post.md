@@ -20,7 +20,7 @@ That question turned into the *Teammate Matcher* — a recommendation tool, not 
 
 ## Why this matters beyond a class assignment
 
-It is tempting to file "team formation" under *minor logistical headache*, but the choice of who works with whom is pedagogically consequential. Group composition shapes who learns from whom, who gets credit, who carries silent labor, and — at the limit — who passes a course [1]. When those decisions are made by algorithm rather than by hand, the same set of questions that animates broader debates about AI in high-stakes domains shows up in miniature: Whose values are encoded in the model? Whose data does it use, and with what consent? Can the people affected by it understand what it did? [2, 3]
+It is tempting to file "team formation" under *minor logistical headache*, but the choice of who works with whom is pedagogically consequential. Group composition shapes who learns from whom, who gets credit, who carries silent labor, and — at the limit — who passes a course [1]. When those decisions are made by algorithm rather than by hand, the same set of questions that animates broader debates about AI in high-stakes domains shows up in miniature: Whose values are encoded in the model? Whose data does it use, and with what consent? Can the people affected by it understand what it's doing? [2, 3]
 
 Higher education has spent the last decade quietly importing data-driven decision systems — early-warning dashboards, automated tutoring placements, "engagement" analytics drawn from learning-management click streams. Most of these systems run without the consent of the students they classify and without the affected instructors fully understanding how they work. We wanted to take the opposite approach: build something narrow, transparent, opt-in, and explicitly designed to keep the instructor in charge.
 
@@ -61,7 +61,7 @@ We evaluated all four models on six metrics: three algorithmic (Silhouette Score
 
 Three findings stood out, and not all of them were the ones we expected.
 
-**1. The Hungarian Algorithm is the model we'd actually deploy.** It is the only one of the four that guaranteed every team contained between three and six students — every other model produced either oversized teams (10 students grouped together) or singletons. It also tied for the highest *skill coverage* (7.875 out of 8 skill dimensions per team), meaning Hungarian-formed teams almost always had at least one member confident in each major skill area. Its silhouette score is the lowest of the four, which is the explicit cost of forcing balanced sizes — but for a deployment context, balanced and slightly-less-tight is far more useful than tight-but-unusable.
+**1. The Hungarian Algorithm is the model we'd actually deploy.** It is the only one of the four that guaranteed every team contained between three and six students — the other models routinely produced oversized teams (one K-Means cluster contained 10 students) or two-person teams too small to cover the project's required skills. It also tied for the highest *skill coverage* (7.875 out of 8 skill dimensions per team), meaning Hungarian-formed teams almost always had at least one member confident in each major skill area. Its silhouette score is the lowest of the four, which is the explicit cost of forcing balanced sizes — but for a deployment context, balanced and slightly-less-tight is far more useful than tight-but-unusable.
 
 **2. Schedule, not skill, is what separates students.** When we ran Principal Component Analysis on the full feature set, the first principal component (15.8% of variance) was dominated by day-of-week availability — weekend, Tuesday, and Thursday loadings positive; Monday loading negative. The second component (13.5%) was conflict-handling and meeting-mode preferences. **Self-rated skill features did not appear in the top loadings until the third principal component.**
 
@@ -77,7 +77,7 @@ This was the most ethically significant finding in the project. GPA is a demogra
 
 ## The ethics, named explicitly
 
-There are three ethical concerns we want to surface, because the rubric for this work asks us to connect findings to social topics — and because we think the connections are real.
+There are three ethical concerns worth surfacing — because the technical choices we made each have a social consequence, and because pretending otherwise would be dishonest about what we built.
 
 **Self-report bias is a fairness problem, not just a measurement problem.** Students from cultures or backgrounds where confidence-expression is discouraged — or where humility is valued for its own sake — will systematically under-rate themselves on a 1-to-5 Likert scale [3]. An algorithm that takes those self-ratings at face value will route those students into "low-skill" team slots and route their more-confident peers into leadership-tagged ones. The Hungarian Algorithm's size-balancing constraint mitigates this by *forcing* mixed teams, and our skill-coverage metric specifically asks whether *anyone* on the team meets each threshold, not whether *everyone* does. But the underlying bias remains in the data. We can't fix it; we can only refuse to amplify it.
 
@@ -89,7 +89,7 @@ There are three ethical concerns we want to surface, because the rubric for this
 
 ## Human in the loop, on purpose
 
-The Teammate Matcher does not assign teams. It produces a ranked set of configurations with interpretable metrics — schedule overlap, skill coverage, ambiguity flags — and the instructor makes the final call. We made this choice deliberately, not as a hedge.
+The Teammate Matcher does not assign teams. It produces a set of candidate configurations with interpretable metrics — schedule overlap, skill coverage, ambiguity flags — and the instructor makes the final call. We made this choice deliberately, not as a hedge.
 
 There are things the algorithm cannot see: known interpersonal conflicts, prior team history, accommodation needs, students currently navigating difficult life circumstances, the instructor's pedagogical intent for that particular project. An autonomous system that overrides these is not a better system — it is a brittle one. The right place for an algorithm in this problem is *upstream of the decision,* surfacing options and quantifying trade-offs, not making the call.
 
