@@ -714,10 +714,13 @@ dominates student differentiation.
 
 ### 6.2 Biplot Interpretation
 
-![PCA biplot: 31 students in PC1–PC2 space, colored by Hungarian team. Top 12 feature loadings shown as red arrows](outputs/pca_biplot.png)
+![PCA biplot: 31 students in PC1–PC2 space, colored by Hungarian team. Top 8 feature loadings shown as red arrows](outputs/pca_biplot.png)
 
-The biplot overlays the 12 loading vectors of largest magnitude onto the
+The biplot overlays the 8 strongest non-collinear loading vectors onto the
 student scatter, with students colored by Hungarian team assignment.
+Loadings whose direction was within 3° of an already-shown vector were
+suppressed to keep labels readable (e.g. `avail_sun` is collinear with
+`avail_sat` in this projection, so only one is plotted).
 
 **Top features on PC1** (primary axis of differentiation, 15.8% of variance):
 
