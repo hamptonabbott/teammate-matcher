@@ -6,9 +6,6 @@ data/raw_survey_responses.csv
 data/raw_survey_data.csv
 data/raw/
 
-# AI developer context — internal notes, not for public repo
-CLAUDE.md
-
 # macOS
 .DS_Store
 
