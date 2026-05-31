@@ -6,6 +6,7 @@ A data science final project for **DTSC 2302** at UNC Charlotte. The system take
 
 📄 **[Read the technical report →](https://hamptonabbott.com/projects/teammate-matcher-report)**
 📝 **[Read the portfolio post →](https://hamptonabbott.com/projects/birds-of-a-feather)**
+🚀 **[Try the live instructor tool →](https://teammate-matcher.streamlit.app)** — a deployed version that forms teams from your own class survey.
 
 ---
 
