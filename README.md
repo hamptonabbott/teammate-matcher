@@ -110,7 +110,7 @@ teammate-matcher/
 ## Setup
 
 ```bash
-git clone https://github.com/HPAuncc/teammate-matcher.git
+git clone https://github.com/hamptonabbott/teammate-matcher.git
 cd teammate-matcher
 pip install pandas numpy scikit-learn scipy matplotlib seaborn jupyter adjustText
 ```

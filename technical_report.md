@@ -1165,7 +1165,7 @@ Claude (Anthropic) was used as a coding assistant throughout development.
 Full source code, preprocessing pipeline, model wrappers, evaluation
 metrics, Jupyter notebooks, and all generated figures are available at:
 
-> [**github.com/HPAuncc/teammate-matcher**](https://github.com/HPAuncc/teammate-matcher)
+> [**github.com/hamptonabbott/teammate-matcher**](https://github.com/hamptonabbott/teammate-matcher)
 
 ---
 

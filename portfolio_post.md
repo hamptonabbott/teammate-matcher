@@ -149,6 +149,6 @@ Selbst, A. D., Boyd, D., Friedler, S. A., Venkatasubramanian, S., & Vertesi, J. 
 
 ### Tools and Acknowledgments
 
-Built in Python with scikit-learn (Pedregosa et al., 2011) for K-Means, Agglomerative, GMM, PCA, and evaluation metrics, and SciPy for the Hungarian Algorithm via `linear_sum_assignment`. Additional tools used: pandas, NumPy, matplotlib, and seaborn. Full source, preprocessing pipeline, model wrappers, evaluation code, and Jupyter notebooks are available at [github.com/HPAuncc/teammate-matcher](https://github.com/HPAuncc/teammate-matcher). Claude (Anthropic) was used as a coding assistant throughout development.
+Built in Python with scikit-learn (Pedregosa et al., 2011) for K-Means, Agglomerative, GMM, PCA, and evaluation metrics, and SciPy for the Hungarian Algorithm via `linear_sum_assignment`. Additional tools used: pandas, NumPy, matplotlib, and seaborn. Full source, preprocessing pipeline, model wrappers, evaluation code, and Jupyter notebooks are available at [github.com/hamptonabbott/teammate-matcher](https://github.com/hamptonabbott/teammate-matcher). Claude (Anthropic) was used as a coding assistant throughout development.
 
 *Special thanks to Aileen Benedict and Jordan Blekking (UNC Charlotte School of Data Science) for advising this project, and to the 31 anonymous DTSC 2302 students who took the survey.*
